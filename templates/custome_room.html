@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{name}}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='custome_rooms.css') }}">
+    </head>
+    <body>
+        <h1>Welcome to <u>{{name}}</u>!</h1>
+        <div id="messages_show">
+        </div>
+        <br>
+        <br>
+        <input type="text" id="input_name" placeholder="name">
+        <input type="text" id="message" name="message" placeholder="message">
+        <br>
+        <br>
+        <button onclick="send()">Send</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="/home/">Back</a>
+        <input type="hidden" id="roomName" value="{{ name }}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+        <script src="{{url_for('static', filename='chat.js')}}"></script>
+    </body>
+</html>

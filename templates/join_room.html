@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Join Room</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <div id="center">
+            <h1><u>Join Room</u></h1>
+            <h3>Room Name:</h3>
+            <input id="name" type="text" placeholder="storys"> 
+            <br>
+            <br>
+            <button id="btn" type="button" onclick="joinroom();">Join</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <a href="/home/">Back</a>
+            <script src="{{url_for('static', filename='script.js')}}"></script>
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        </div>
+    </body>
+</html>

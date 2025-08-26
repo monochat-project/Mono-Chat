@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <u><h1>H.O.M.E</h1></u>
+    <div>
+        <h2><u>PreMade Rooms:</u></h2>
+        <div id="premade">
+            <a href="/room/main">Main | Welcome to Monochat!</a>
+            <a href="/room/memez">Memez | Meme production corp</a>
+            <a href="/room/room-discussion">Room-Discussion | Promote your own Room</a>
+            <a href="/room/debate-hall">Debate-Hall | This or that?!</a>
+            <a href="/room/deep-thinking">Deep-Thinking | Philosophy and Reality</a>
+            <a href="/room/paranoid">Paranoid | Shizo posting and scary stories...</a>
+        </div>
+    </div>
+
+    <br><br><br>
+    <h2><u>Custom Rooms:</u></h2>
+    <div id="button-container">
+        <a id="button" href="/create-room/">Create</a>
+        <a id="button" href="/join-room/">Join</a>
+    </div>
+   
+    <script src="{{url_for('static', filename='fun.js')}}"></script>
+</body>
+</html>
