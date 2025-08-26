@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mono-Chat</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <div id="center">
+        <h1><u>Welcome to Mono-Chat</u></h1>
+        <img src="{{url_for('static', filename='monochat.png')}}" width="450px" height="450px"/>
+        <br>
+        <a id="enter" href="/rules">Enter</a>
+        <br>
+        </div>
+        <h3 id="center">Room of All Rooms, Forum of All Forums, and so on...</h3>
+    </body>
+</html>
