@@ -1,0 +1,30 @@
+body {
+    text-align: center;
+    font-family: "Silkscreen";
+    background-color: cornsilk;
+}
+
+h1 {
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+}
+
+a {
+    font-family: "Silkscreen";
+    font-weight: bold;
+    border: solid black 2px;
+    background-color: rgb(199, 199, 199);
+    display: inline-block;
+    width: 160px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+}
+
+a:hover {
+    font-family: "Silkscreen";
+    font-weight: bolder;
+    background-color: rgb(136, 136, 136);
+    color: rgb(85, 40, 128);
+    
+}

@@ -1,0 +1,53 @@
+body {
+    text-align: center;
+    font-family: "Silkscreen";
+    background-color: cornsilk;
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+}
+
+div {
+    display: inline-block;
+    height: 90%;
+    width: 80%;
+    background-color: gainsboro;
+    border: solid black 3px;
+}
+
+#messages_show {
+    text-align: left;
+    font-size: x-large;
+}
+
+a {
+    font-family: "Silkscreen";
+    font-weight: bold;
+    border: solid black 2px;
+    background-color: rgb(199, 199, 199);
+    display: inline-block;
+    width: 160px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+}
+
+button {
+    font-family: "Silkscreen";
+    border: solid black 2px;
+    background-color: rgb(199, 199, 199);
+    display: inline-block;
+    width: 130px;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#button:hover {
+    font-family: "Silkscreen";
+    font-weight: bolder;
+    background-color: rgb(136, 136, 136);
+    color: rgb(85, 40, 128);
+    
+}
