@@ -2,11 +2,9 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify
 import bleach 
 from werkzeug.utils import secure_filename
 from flask_socketio import SocketIO, join_room, leave_room
-import logging
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
-logging.basicConfig(level=logging.INFO)
 app = Flask(__name__)
 app.config['SECRET_KEY'] = ''
 limiter = Limiter(
