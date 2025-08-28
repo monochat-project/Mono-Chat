@@ -6,7 +6,7 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = ''
+app.config['SECRET_KEY'] = 'mon0chart21#--'
 limiter = Limiter(
     get_remote_address,
     app=app,
@@ -99,7 +99,6 @@ def room(name):
         if sname in fnames:
             return render_template("custome_room.html", name=bleach.clean(name))
         elif sname not in fnames:
-            leave_room(sname)
             return redirect(url_for("index")) 
         return redirect(url_for("index")) 
 @socketio.on("join")
@@ -126,17 +125,19 @@ def receive_message(data):
     name = bleach.clean(data.get("input_name", "Anon"))
     message = bleach.clean(data.get("message", ""))
     room_name = secure_filename(data.get("room_name", ""))
-    if len(message) > 150:
-        message = message[:150]
-        tolong = "message"
-    if len(name) > 10:
-        name = name[:10] 
-        tolong = "message"
-    with open(f"rooms/{secure_filename(room_name)}.txt", "a") as fil:
-        fil.write(f"{name}: {message}\n \n")
-    
-    socketio.emit("new_message", {"name": name, "message": message}, room=room_name)
-    
-    socketio.emit("too_long", {"long": tolong}, room=room_name)
+    tolong = None
+    if name and message:
+        if len(message) > 75:
+            message = message[:75]
+            tolong = "message"
+        if len(name) > 15:
+            name = name[:15] 
+            tolong = "message"
+        with open(f"rooms/{secure_filename(room_name)}.txt", "a") as fil:
+            fil.write(f"{name}: {message}\n \n")
+            socketio.emit("new_message", {"name": name, "message": message}, room=room_name)
+        if tolong:
+            socketio.emit("too_long", {"long": tolong}, room=request.sid)
+        
 if __name__ == '__main__':
-    socketio.run(app)
+    socketio.run(app, host="127.0.0.1", port=5000, debug=False)
