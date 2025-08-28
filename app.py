@@ -6,7 +6,7 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'mon0chart21#--'
+app.config['SECRET_KEY'] = ''
 limiter = Limiter(
     get_remote_address,
     app=app,
@@ -132,11 +132,16 @@ def receive_message(data):
             tolong = "message"
         if len(name) > 15:
             name = name[:15] 
-            tolong = "message"
+            tolong = "name"
         with open(f"rooms/{secure_filename(room_name)}.txt", "a") as fil:
             fil.write(f"{name}: {message}\n \n")
             socketio.emit("new_message", {"name": name, "message": message}, room=room_name)
         if tolong:
+            socketio.emit("too_long", {"long": tolong}, room=request.sid)
+        
+if __name__ == '__main__':
+    socketio.run(app, host="127.0.0.1", port=5000, debug=False)
+
             socketio.emit("too_long", {"long": tolong}, room=request.sid)
         
 if __name__ == '__main__':
