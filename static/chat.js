@@ -34,8 +34,8 @@ socket.on("rate_limited", function(data) {
 
 socket.on("too_long", function(data) {
   if (data.long === "message") {
-    alert("Message has to be under 150 characters.")
+    alert("Message has to be under 75 characters.")
   } else if (data.long === "name") {
-   alert("Name has to be under 10 characters.")
+   alert("Name has to be under 15 characters.")
 }
 })
