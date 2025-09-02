@@ -141,8 +141,3 @@ def receive_message(data):
         
 if __name__ == '__main__':
     socketio.run(app, host="127.0.0.1", port=5000, debug=False)
-
-            socketio.emit("too_long", {"long": tolong}, room=request.sid)
-        
-if __name__ == '__main__':
-    socketio.run(app, host="127.0.0.1", port=5000, debug=False)
