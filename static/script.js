@@ -1,6 +1,6 @@
 function createroom() {
     const name = document.getElementById("name");
-    axios.post('http://127.0.0.1:5000/create-room/', {
+    axios.post('/create-room/', {
     name: name.value}, {headers: { "Content-Type": "application/json"}
 })
 .then((res) => {
@@ -11,7 +11,7 @@ function createroom() {
 
 function joinroom() {
   const name = document.getElementById("name");
-    axios.post('http://127.0.0.1:5000/join-room/', {
+    axios.post('/join-room/', {
     name: name.value}, {headers: { "Content-Type": "application/json"}
 })
 .then((res) => {
