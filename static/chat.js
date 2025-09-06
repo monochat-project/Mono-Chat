@@ -1,4 +1,4 @@
-var socket = io("http://localhost:5000");
+var socket = io("");
 var roomName = document.getElementById("roomName").value;
 socket.emit("join", { room: roomName, name: roomName});
 
@@ -10,7 +10,7 @@ socket.on("get_messages", function(data) {
 socket.on("not_found", function(data) {
   const notfound = data.found; 
   if (notfound === "not") {
-    window.location.replace("http://127.0.0.1:5000/")
+    window.location.replace("/")
   }
 });
 
